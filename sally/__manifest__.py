@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_management', 'website_sale', 'stock', 'sale_stock'],
+    'depends': ['base', 'base_geolocalize', 'sale_management', 'website_sale', 'stock', 'sale_stock'],
     
     'application': True,
     'license': "LGPL-3",
@@ -28,9 +28,10 @@
 
     # always loaded
     'data': [
+        'security/groups.xml',
+        'security/record_rules.xml',
         'security/ir.model.access.csv',
         'data/paperformat.xml',
-        'data/groups.xml',
         'data/server_action.xml',
         'data/scheduled_action.xml',
         'data/config_parameter.xml',
@@ -42,6 +43,7 @@
         'views/flower_views.xml',
         'views/product_template_views.xml',
         'views/website_sale_views.xml',
+        'views/sale_order_lines_flower.xml',
         'views/flower_water_views.xml',
         'views/warehouse_weather_view.xml',
     ],

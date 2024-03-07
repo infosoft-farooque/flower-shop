@@ -10,7 +10,7 @@ class FlowerWater(models.Model):
 
     def action_needs_watering(self):
         flowers = self.env["product.template"].search([("is_flower", "=", True)])
-        serials = self.env["stock.lot"].search([("product_id", "in", flowers.ids)])
+        serials = self.env["stock.lot"].search([("product_id", "=", flowers.ids)])
         lot_vals = defaultdict(bool)
         for serial in serials:
             if serial.water_ids:
